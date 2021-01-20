@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.alberto.a3line.data.domain.model.User
 import me.alberto.a3line.databinding.UserItemBinding
+import me.alberto.a3line.util.extension.loadImageFromUrl
 
 class UserAdapter(private val clickCallback: (User) -> Unit) :
     ListAdapter<User, RecyclerView.ViewHolder>(DiffCallback()) {
@@ -38,6 +39,7 @@ class UserAdapter(private val clickCallback: (User) -> Unit) :
             binding.decor.setBackgroundColor(user.color)
             binding.circleImageView.circleBackgroundColor = user.color
             binding.root.setOnClickListener { clickCallback(user) }
+            binding.circleImageView.loadImageFromUrl(user.photoUrl)
         }
 
         companion object {

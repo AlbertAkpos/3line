@@ -28,7 +28,7 @@ data class UserEntity(
     @ColumnInfo(name = "company")
     val company: Company,
     @ColumnInfo(name = "photo_url")
-    val photoUrl: String? = null,
+    var photoUrl: String? = null,
     @ColumnInfo(name = "color")
     val color: Int = getRandomColor()
 )
