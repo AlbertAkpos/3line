@@ -9,6 +9,7 @@ import me.alberto.a3line.di.viewmodel.ViewModelFactory
 import me.alberto.a3line.di.viewmodel.ViewModelKey
 import me.alberto.a3line.screens.details.viewmodel.DetailsViewModel
 import me.alberto.a3line.screens.home.viewmodel.HomeViewModel
+import me.alberto.a3line.screens.newuser.viewmodel.NewUserViewModel
 
 @Module
 abstract class ViewModelModule {
@@ -24,4 +25,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DetailsViewModel::class)
     abstract fun bindsDetailsViewModel(detailsViewModel: DetailsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(NewUserViewModel::class)
+    abstract fun bindsNewUserViewModel(newUserViewModel: NewUserViewModel): ViewModel
 }

@@ -32,7 +32,7 @@ class HomeViewModel @Inject constructor(
         Log.d(TAG, "${users.size}")
     }
 
-    private fun getRemote() {
+    fun getRemote() {
         if (!networkHelper.isConnected()) {
             _state.postValue(Error("You're offline"))
             return

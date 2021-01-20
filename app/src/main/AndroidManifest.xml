@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.3Line">
-        <activity android:name=".screens.details.view.DetailsActivity"/>
+        <activity android:name=".screens.newuser.view.NewUserActivity"></activity>
+        <activity android:name=".screens.details.view.DetailsActivity" />
         <activity android:name=".screens.home.view.HomeActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"

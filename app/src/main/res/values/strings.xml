@@ -5,4 +5,13 @@
     <string name="users">Users</string>
     <string name="address">%s %s, %s</string>
     <string name="icon_desc">camera icon</string>
+    <string name="name">Name</string>
+    <string name="username">username</string>
+    <string name="phone_number">Phone number</string>
+    <string name="user_address">Address</string>
+    <string name="email">Email</string>
+    <string name="company">Company</string>
+    <string name="save">Save</string>
+    <string name="retry">Retry</string>
+    <string name="save_msg">User saved</string>
 </resources>

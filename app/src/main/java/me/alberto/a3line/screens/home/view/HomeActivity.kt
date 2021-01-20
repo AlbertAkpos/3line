@@ -7,12 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import me.alberto.a3line.App
+import me.alberto.a3line.R
 import me.alberto.a3line.data.domain.model.User
 import me.alberto.a3line.data.domain.model.User.Companion.USER_KEY
 import me.alberto.a3line.databinding.ActivityHomeBinding
 import me.alberto.a3line.screens.details.view.DetailsActivity
 import me.alberto.a3line.screens.home.adapter.UserAdapter
 import me.alberto.a3line.screens.home.viewmodel.HomeViewModel
+import me.alberto.a3line.screens.newuser.view.NewUserActivity
 import me.alberto.a3line.util.State
 import me.alberto.a3line.util.extension.beGone
 import me.alberto.a3line.util.extension.beVisible
@@ -38,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
         binding.userList.adapter = UserAdapter { navigateToDetails(it) }
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+        binding.fab.setOnClickListener { startActivity(Intent(this, NewUserActivity::class.java)) }
     }
 
     private fun startObserve() {
@@ -66,7 +69,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showError(msg: String) {
-        Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).show()
+        Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).apply {
+            setAction(getString(R.string.retry)) { viewModel.getRemote() }
+            show()
+        }
     }
 
     private fun navigateToDetails(user: User) {
