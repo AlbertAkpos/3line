@@ -6,6 +6,7 @@ import dagger.Component
 import me.alberto.a3line.di.module.DataModule
 import me.alberto.a3line.di.module.LocalModule
 import me.alberto.a3line.di.module.ViewModelModule
+import me.alberto.a3line.screens.home.view.HomeActivity
 import javax.inject.Singleton
 
 @Component(modules = [DataModule::class, LocalModule::class, ViewModelModule::class])
@@ -15,4 +16,6 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent
     }
+
+    fun inject(activity: HomeActivity)
 }

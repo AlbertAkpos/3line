@@ -1,5 +1,6 @@
 package me.alberto.a3line.data.domain.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import me.alberto.a3line.data.domain.model.User
 import me.alberto.a3line.data.local.database.UserEntity
@@ -14,6 +15,7 @@ class Repository @Inject constructor(
 ) : IRepository {
     override suspend fun getRemote() {
         val response = remoteSource.getUsers().map { it.toEntity() }
+        Log.d("repository", "${response.size}")
         localSource.addUser(*response.toTypedArray())
     }
 

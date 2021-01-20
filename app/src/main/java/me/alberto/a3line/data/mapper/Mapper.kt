@@ -9,16 +9,16 @@ import me.alberto.a3line.data.remote.model.UserDTO
 
 fun UserEntity.toDomain(): User {
     return User(
-        id, name, photoUrl, username, email, address, phone, website, company
+        id, name, photoUrl, username, email, address, phone, website, company, color
     )
 }
 
 fun User.toEntity(): UserEntity {
-    return UserEntity(id, name, username, email, address, phone, website, company, photoUrl)
+    return UserEntity(id, name, username, email, address, phone, website, company, photoUrl, color)
 }
 
 fun UserDTO.toEntity(): UserEntity {
-    val geo = Geo(address.geo.lat.toLong(), address.geo.lng.toLong())
+    val geo = Geo(  address.geo.lat.toDouble(), address.geo.lng.toDouble())
     val address = Address(
         street = address.street,
         city = address.city,

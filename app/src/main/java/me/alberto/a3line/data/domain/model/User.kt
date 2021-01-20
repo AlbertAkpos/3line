@@ -1,5 +1,6 @@
 package me.alberto.a3line.data.domain.model
 
+
 data class User(
     val id: Long,
     val name: String,
@@ -9,5 +10,6 @@ data class User(
     val address: Address,
     val phone: String,
     val website: String?,
-    val company: Company
+    val company: Company,
+    val color: Int
 )

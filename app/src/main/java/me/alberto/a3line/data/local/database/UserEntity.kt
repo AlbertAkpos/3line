@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 import me.alberto.a3line.data.domain.model.Address
 import me.alberto.a3line.data.domain.model.Company
 import me.alberto.a3line.util.USER_TABLE
+import me.alberto.a3line.util.getRandomColor
 
 @Entity(tableName = USER_TABLE)
 data class UserEntity(
@@ -27,5 +28,7 @@ data class UserEntity(
     @ColumnInfo(name = "company")
     val company: Company,
     @ColumnInfo(name = "photo_url")
-    val photoUrl: String? = null
+    val photoUrl: String? = null,
+    @ColumnInfo(name = "color")
+    val color: Int = getRandomColor()
 )

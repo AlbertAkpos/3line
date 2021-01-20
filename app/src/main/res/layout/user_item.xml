@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="me.alberto.a3line.data.domain.model.User" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/user_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/sm"
+        android:layout_marginTop="@dimen/sm"
+        app:cardCornerRadius="@dimen/sm"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="@dimen/profile_img"
+                android:layout_height="@dimen/profile_img"
+                android:layout_marginLeft="@dimen/sm"
+                android:src="@drawable/default_profile_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sm"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="@dimen/sm"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{ user.name }"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    tools:text="John Doe" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{ user.username }"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    tools:text="John Doe Mark 219" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{ user.email }"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    tools:text="john4real@gmail.com" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/decor"
+                android:layout_width="@dimen/sm"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/teal_200"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

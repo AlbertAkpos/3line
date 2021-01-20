@@ -11,19 +11,25 @@ class Converter {
 
     @TypeConverter
     fun fromAddress(address: Address): String {
-        val type = object : TypeToken<Address>(){}.type
+        val type = object : TypeToken<Address>() {}.type
         return gson.toJson(address, type)
     }
 
     @TypeConverter
     fun toAddress(address: String): Address {
-        val type = object : TypeToken<Address>(){}.type
+        val type = object : TypeToken<Address>() {}.type
         return gson.fromJson(address, type)
     }
 
     @TypeConverter
     fun fromCompany(company: Company): String {
-        val type = object : TypeToken<Company>(){}.type
+        val type = object : TypeToken<Company>() {}.type
         return gson.toJson(company, type)
+    }
+
+    @TypeConverter
+    fun toCompany(comStr: String): Company {
+        val type = object : TypeToken<Company>() {}.type
+        return gson.fromJson(comStr, type)
     }
 }
