@@ -179,8 +179,11 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/save_user"
-                        android:layout_width="@dimen/max_width"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:maxWidth="@dimen/max_width"
+                        app:cornerRadius="@dimen/sm"
+                        android:layout_height="60dp"
+                        android:textSize="20sp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/sm"
                         android:text="@string/save"

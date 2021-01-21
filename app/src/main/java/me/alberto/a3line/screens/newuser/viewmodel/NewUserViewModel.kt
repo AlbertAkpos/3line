@@ -21,7 +21,7 @@ class NewUserViewModel @Inject constructor(private val repository: IRepository) 
     val company = MutableLiveData<String>()
     val address = MutableLiveData<String>()
     val phoneNumber = MutableLiveData<String>()
-    val photoUrl = MutableLiveData<String>()
+    private val photoUrl = MutableLiveData<String>()
 
     val nameError = MutableLiveData<String>()
     val usernameError = MutableLiveData<String>()
@@ -81,8 +81,7 @@ class NewUserViewModel @Inject constructor(private val repository: IRepository) 
                 try {
                     repository.addUser(user)
                     _success.postValue(true)
-                } catch (exp: Exception) {
-                }
+                } catch (exp: Exception) { /* Ignore  */ }
             }
 
         }

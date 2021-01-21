@@ -61,6 +61,7 @@ class NewUserActivity : AppCompatActivity() {
         binding.toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.back_icon)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
+        //Text fields
         binding.nameField.addTextChangedListener { binding.nameInput.removeError() }
         binding.usernameField.addTextChangedListener { binding.usernameInput.removeError() }
         binding.emailField.addTextChangedListener { binding.emailInput.removeError() }

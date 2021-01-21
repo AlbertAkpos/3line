@@ -13,13 +13,12 @@ class Repository @Inject constructor(
     private val localSource: ILocalSource
 ) : IRepository {
     override suspend fun getRemote() {
-        val response = remoteSource.getUsers().map { it.toEntity() }
-        localSource.addUser(*response.toTypedArray())
+        val response = remoteSource.getUsers()
+        localSource.addAll(response)
     }
 
     override suspend fun addUser(vararg user: User) {
-        val users = user.map { it.toEntity() }
-        localSource.addUser(*users.toTypedArray())
+        localSource.addUser(*user)
     }
 
     override suspend fun updateUser(user: User) {
