@@ -92,6 +92,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/name_field"
                             android:layout_width="match_parent"
+                            android:inputType="text"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.name }" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -108,6 +109,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/username_field"
                             android:layout_width="match_parent"
+                            android:inputType="text"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.username }" />
 
@@ -125,6 +127,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/email_field"
                             android:layout_width="match_parent"
+                            android:inputType="textEmailAddress"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.email }" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -141,6 +144,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/address_field"
                             android:layout_width="match_parent"
+                            android:inputType="text"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.address }" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -157,6 +161,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/phone_number_field"
                             android:layout_width="match_parent"
+                            android:inputType="phone"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.phoneNumber }" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -173,6 +178,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/company_field"
                             android:layout_width="match_parent"
+                            android:inputType="text"
                             android:layout_height="wrap_content"
                             android:text="@={ viewModel.company }" />
                     </com.google.android.material.textfield.TextInputLayout>
